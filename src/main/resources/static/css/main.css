@@ -1,0 +1,76 @@
+body{
+    background-image:linear-gradient(to bottom, #97befb 0%, #ffffff 100%);
+    background-repeat: no-repeat;
+    font-family: Raleway, sans-serif;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item{
+    flex: 1 0 25%; /* explanation below */
+    margin: 5px;
+}
+
+.status{
+    z-index: 10;
+    width: 100%;
+    background: #2cc102;
+    color: #ffffff;
+    font-size: 7vw;
+    white-space: nowrap;
+    position: absolute;
+    /*position: -webkit-sticky;*/
+    animation: move 10s ease-out forwards;
+    animation-iteration-count: 1;
+
+    /* Safari and Chrome */
+    -webkit-animation: move 10s ease-out forwards;
+    -webkit-animation-iteration-count: 1;
+}
+
+.hidden{
+    display: none;
+}
+
+.title{
+    font-size: 7vw;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: #2f2f2f;
+}
+
+input[type=submit]{
+    width: 100%;
+    white-space: nowrap;
+    font-size: 7vw;
+    height: 200px;
+}
+
+@keyframes move
+{ from {top:0px; opacity: 1;}
+    to {top:-100px; opacity: 0;}
+}
+
+@-webkit-keyframes move /* Safari and Chrome */
+{
+    from {top:0px; opacity: 1;}
+    to {top:-100px; opacity: 0;}
+}
+
+#close {
+    float: right;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#killerbutton {
+    background: #ff0017;
+    color: #ffffff;
+}
