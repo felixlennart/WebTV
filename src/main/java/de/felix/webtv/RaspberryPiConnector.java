@@ -32,12 +32,14 @@ public class RaspberryPiConnector {
         // Deal with different player types
         if(senderUrl.contains("ustvgo")){
             Robot r = new Robot();
+            r.mouseMove(50, 50);
             r.keyPress(KeyEvent.VK_F);
             r.keyRelease(KeyEvent.VK_F);
             r.keyPress(KeyEvent.VK_F);
             r.keyRelease(KeyEvent.VK_F);
         }else {
             Robot r = new Robot();
+            r.mouseMove(50, 50);
             r.keyPress(KeyEvent.VK_F);
             r.keyRelease(KeyEvent.VK_F);
         }
