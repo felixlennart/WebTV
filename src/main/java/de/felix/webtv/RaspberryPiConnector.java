@@ -33,15 +33,15 @@ public class RaspberryPiConnector {
         if(senderUrl.contains("ustvgo")){
             Robot r = new Robot();
             r.mouseMove(50, 50);
-            r.keyPress(KeyEvent.VK_F);
-            r.keyRelease(KeyEvent.VK_F);
-            r.keyPress(KeyEvent.VK_F);
-            r.keyRelease(KeyEvent.VK_F);
+            r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+            r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         }else {
             Robot r = new Robot();
             r.mouseMove(50, 50);
-            r.keyPress(KeyEvent.VK_F);
-            r.keyRelease(KeyEvent.VK_F);
+            r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         }
     }
 }
