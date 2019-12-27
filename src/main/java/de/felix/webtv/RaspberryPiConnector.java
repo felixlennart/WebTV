@@ -34,10 +34,10 @@ public class RaspberryPiConnector {
             Robot r = new Robot();
             r.keyPress(KeyEvent.VK_F);
             r.keyRelease(KeyEvent.VK_F);
-        }else {
-            Robot r = new Robot();
             r.keyPress(KeyEvent.VK_F);
             r.keyRelease(KeyEvent.VK_F);
+        }else {
+            Robot r = new Robot();
             r.keyPress(KeyEvent.VK_F);
             r.keyRelease(KeyEvent.VK_F);
         }
