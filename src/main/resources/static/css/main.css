@@ -26,6 +26,8 @@ body{
     position: fixed;
     left: 0;
     top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
     animation: move 5s ease-out forwards;
     animation-delay: 5s;
     animation-iteration-count: 1;

@@ -35,10 +35,11 @@ public class RaspberryPiConnector {
             r.keyPress(KeyEvent.VK_F);
             r.keyRelease(KeyEvent.VK_F);
         }else {
-            Robot bot = new Robot();
-            bot.mouseMove(50, 50);
-            bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-            bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+            Robot r = new Robot();
+            r.keyPress(KeyEvent.VK_F);
+            r.keyRelease(KeyEvent.VK_F);
+            r.keyPress(KeyEvent.VK_F);
+            r.keyRelease(KeyEvent.VK_F);
         }
     }
 }
