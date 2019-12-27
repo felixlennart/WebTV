@@ -10,7 +10,7 @@
     <script src="/js/main.js"></script>
 </head>
 <body>
-<div class="hidden" id="status"><a id="statustext"></a><a id="close" href="#">X</a></div>
+<div class="hidden" id="status"><a id="statustext"></a><a id="close" href="javascript:void(0)">X</a></div>
 <h1 class="title">Remote Control</h1>
 <hr>
 <div class="container">

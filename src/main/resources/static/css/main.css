@@ -23,13 +23,16 @@ body{
     color: #ffffff;
     font-size: 7vw;
     white-space: nowrap;
-    position: absolute;
-    /*position: -webkit-sticky;*/
-    animation: move 10s ease-out forwards;
+    position: fixed;
+    left: 0;
+    top: 0;
+    animation: move 5s ease-out forwards;
+    animation-delay: 5s;
     animation-iteration-count: 1;
 
     /* Safari and Chrome */
-    -webkit-animation: move 10s ease-out forwards;
+    -webkit-animation: move 5s ease-out forwards;
+    -webkit-animation-delay: 5s;
     -webkit-animation-iteration-count: 1;
 }
 
@@ -55,13 +58,13 @@ input[type=submit]{
 
 @keyframes move
 { from {top:0px; opacity: 1;}
-    to {top:-100px; opacity: 0;}
+    to {top:-200px; opacity: 0;}
 }
 
 @-webkit-keyframes move /* Safari and Chrome */
 {
     from {top:0px; opacity: 1;}
-    to {top:-100px; opacity: 0;}
+    to {top:-200px; opacity: 0;}
 }
 
 #close {
@@ -73,4 +76,5 @@ input[type=submit]{
 #killerbutton {
     background: #ff0017;
     color: #ffffff;
+    margin-top: 30px;
 }
