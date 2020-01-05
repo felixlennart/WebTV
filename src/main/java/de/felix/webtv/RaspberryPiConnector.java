@@ -11,16 +11,22 @@ import java.util.Properties;
 public class RaspberryPiConnector {
     private String openString;
     private String killString;
+    private String shutdownString;
 
     public void init() throws IOException {
         Properties prop = new Properties();
         prop.load(WebtvApplication.class.getClassLoader().getResourceAsStream("bashcommands.properties"));
         openString = prop.getProperty("open");
         killString = prop.getProperty("kill");
+        shutdownString = prop.getProperty("shutdown");
     }
 
     public void kill() throws IOException {
         Runtime.getRuntime().exec(this.killString);
+    }
+
+    public void shutdown() throws IOException {
+        Runtime.getRuntime().exec(this.shutdownString);
     }
 
     public void open(String senderUrl) throws IOException, InterruptedException, AWTException {

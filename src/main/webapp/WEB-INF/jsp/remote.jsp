@@ -22,10 +22,18 @@
 </form>
 </div>
 </c:forEach>
+    <div class="item">
+        <form action="#" th:action="@{/remote}" th:object="${remoteHandler}" method="post">
+            <input type="hidden" value="closePlayer" name="url" th:field="*{url}" />
+            <input type="submit" value="Close player" style="margin-top: 30px;"/>
+        </form>
+    </div>
+    <div class="item">
+        <form action="#" th:action="@{/remote}" th:object="${remoteHandler}" method="post">
+            <input type="hidden" value="killSpring" name="url" th:field="*{url}" />
+            <input type="submit" id="killerbutton" value="Shutdown" />
+        </form>
+    </div>
 </div>
-<form action="#" th:action="@{/remote}" th:object="${remoteHandler}" method="post">
-    <input type="hidden" value="killSpring" name="url" th:field="*{url}" />
-    <input type="submit" id="killerbutton" value="Shutdown application" />
-</form>
 </body>
 </html>
