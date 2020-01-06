@@ -69,6 +69,17 @@ input[type=submit]{
     to {top:-200px; opacity: 0;}
 }
 
+@keyframes fadeOut
+{ from {bottom:0px; opacity: 1;}
+    to {bottom:-200px; opacity: 0;}
+}
+
+@-webkit-keyframes fadeOut /* Safari and Chrome */
+{
+    from {bottom:0px; opacity: 1;}
+    to {bottom:-200px; opacity: 0;}
+}
+
 #close {
     float: right;
     text-decoration: none;
@@ -79,4 +90,27 @@ input[type=submit]{
     background: #ff0017;
     color: #ffffff;
     margin-top: 30px;
+}
+
+.guide {
+    z-index: 9;
+    width: 100%;
+    background: #bfbac1;
+    color: #000000;
+    text-align: center;
+    font-size: 7vw;
+    white-space: nowrap;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    animation: fadeOut 5s ease-out forwards;
+    animation-delay: 15s;
+    animation-iteration-count: 1;
+
+    /* Safari and Chrome */
+    -webkit-animation: fadeOut 5s ease-out forwards;
+    -webkit-animation-delay: 15s;
+    -webkit-animation-iteration-count: 1;
 }

@@ -13,6 +13,11 @@ async function showHashMessage(){
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
+    if(document.getElementById("guidecontent").innerText.length !== 0){
+        document.getElementById("guide").classList.remove("hidden");
+        document.getElementById("guide").classList.add("guide");
+    }
+
     showHashMessage();
 
     window.addEventListener('hashchange', function() {
@@ -20,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }, false);
 
     document.getElementById("killerbutton").addEventListener("click", function (e) {
-        if (confirm('Do you really want to shut down the application?')) {
+        if (confirm('Do you really want to shut down the application and the system?')) {
             alert('Shutting down...');
         } else {
            e.preventDefault();

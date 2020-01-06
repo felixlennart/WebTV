@@ -18,22 +18,25 @@
 <div class="item">
 <form action="#${sender[0]}" th:action="@{/remote}" th:object="${remoteHandler}" method="post">
     <input type="hidden" value="${sender[1]}" name="url" th:field="*{url}" />
-    <input type="submit" class="senderbutton" value="${sender[0].toUpperCase()}" />
+    <input type="submit" class="senderbutton" name="sender" value="${sender[0].toUpperCase()}" />
 </form>
 </div>
 </c:forEach>
     <div class="item">
         <form action="#" th:action="@{/remote}" th:object="${remoteHandler}" method="post">
             <input type="hidden" value="closePlayer" name="url" th:field="*{url}" />
-            <input type="submit" value="Close player" style="margin-top: 30px;"/>
+            <input type="submit" name="sender" value="Close player" style="margin-top: 30px;"/>
         </form>
     </div>
     <div class="item">
         <form action="#" th:action="@{/remote}" th:object="${remoteHandler}" method="post">
             <input type="hidden" value="killSpring" name="url" th:field="*{url}" />
-            <input type="submit" id="killerbutton" value="Shutdown" />
+            <input type="submit" name="sender" id="killerbutton" value="Shutdown" />
         </form>
     </div>
+</div>
+<div id="guide" class="hidden">
+    <span id="guidecontent">${guide}</span>
 </div>
 </body>
 </html>

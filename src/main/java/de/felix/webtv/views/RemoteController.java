@@ -1,6 +1,7 @@
 package de.felix.webtv.views;
 import de.felix.webtv.RaspberryPiConnector;
 import de.felix.webtv.RemoteHandler;
+import de.felix.webtv.TVGuide;
 import de.felix.webtv.WebtvApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.jsp.PageContext;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,14 +30,17 @@ public class RemoteController {
         return senderListe;
     }
 
+    String guide = "";
+
     @GetMapping({"/", "/remote"})
     public String remote(Model model, ModelMap vars) throws IOException {
         vars.put("senderliste", liste());
+        model.addAttribute("guide", guide);
         return "remote";
     }
 
     @PostMapping({"/", "/remote"})
-    public String remoteSubmit(@ModelAttribute RemoteHandler remoteHandler, ModelMap vars, @RequestParam("url") String url) throws IOException, AWTException, InterruptedException {
+    public String remoteSubmit(@ModelAttribute RemoteHandler remoteHandler, ModelMap vars, Model model, @RequestParam("url") String url, @RequestParam("sender") String sender) throws IOException, AWTException, InterruptedException {
         RaspberryPiConnector piConnector = new RaspberryPiConnector();
 //        piConnector.open(remoteHandler.getSenderLink());
         if(url.equals("killSpring") || url.equals("closePlayer")){
@@ -45,9 +50,17 @@ public class RemoteController {
                 piConnector.shutdown();
                 System.exit(0);
             }
+        }else {
+            piConnector.open(url);
+            vars.put("senderliste", liste());
+
+            // Get current program name
+            TVGuide tvGuide = new TVGuide();
+            tvGuide.setChannel(sender.toLowerCase());
+            guide = tvGuide.getGuide();
+
         }
-        piConnector.open(url);
-        vars.put("senderliste", liste());
+        model.addAttribute("guide", guide);
         return "remote";
     }
 }
