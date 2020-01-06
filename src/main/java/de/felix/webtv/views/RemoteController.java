@@ -50,6 +50,7 @@ public class RemoteController {
                 piConnector.shutdown();
                 System.exit(0);
             }
+            guide = "";
         }else {
             piConnector.open(url);
             vars.put("senderliste", liste());
@@ -58,8 +59,8 @@ public class RemoteController {
             TVGuide tvGuide = new TVGuide();
             tvGuide.setChannel(sender.toLowerCase());
             guide = tvGuide.getGuide();
-
         }
+        vars.put("senderliste", liste());
         model.addAttribute("guide", guide);
         return "remote";
     }
