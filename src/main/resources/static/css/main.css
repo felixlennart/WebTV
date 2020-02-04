@@ -114,3 +114,26 @@ input[type=submit]{
     -webkit-animation-delay: 15s;
     -webkit-animation-iteration-count: 1;
 }
+
+#openguide {
+    float: right;
+    clear: right;
+    text-decoration: none;
+}
+
+#fullguide {
+    z-index: 11;
+    margin: 20px;
+    box-shadow: 20px 20px 20px #000000;
+    position: fixed;
+    background: #ffffff;
+    left: 10px;
+    right: 10px;
+}
+
+
+.closeguide {
+    float: right;
+    clear: right;
+    text-decoration: none;
+}

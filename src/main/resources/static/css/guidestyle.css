@@ -1,9 +1,28 @@
 
 body{
     font-family: Raleway, sans-serif;
-    font-size: 10vw;
+    font-size: 5vw;
+}
+
+tr:first-child{
+    background-color: #bfbac1;
+    font-weight: bold;
+    text-align: center;
 }
 
 td {
     border: #2f2f2f 2px solid;
+}
+
+.loading {
+    height: 1em;
+    margin: 0 auto;
+}
+
+.headline {
+    text-align: center;
+}
+
+#fullguidecontainer {
+    display: table;
 }

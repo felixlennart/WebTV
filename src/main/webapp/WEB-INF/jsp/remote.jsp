@@ -10,15 +10,22 @@
     <script src="/js/main.js"></script>
 </head>
 <body>
+<div id="fullguide" class="hidden">
+    <a href="javascript:void(0)" class="closeguide">&#128473;</a>
+    <div style="width: 90vw; height: 90vh; text-align: center; vertical-align: center">
+        <img src="/media/loading.gif"/>
+    </div>
+
+</div>
 <div class="hidden" id="status"><a id="statustext"></a><a id="close" href="javascript:void(0)">X</a></div>
-<h1 class="title">Remote Control</h1>
+<h1 class="title">Remote Control <a href="javascript:void(0)" id="openguide">&#128712;</a></h1>
 <hr>
 <div class="container">
 <c:forEach items="${senderliste}" var="sender">
 <div class="item">
 <form action="#${sender[0]}" th:action="@{/remote}" th:object="${remoteHandler}" method="post">
     <input type="hidden" value="${sender[1]}" name="url" th:field="*{url}" />
-    <input type="submit" class="senderbutton" name="sender" value="${sender[0].toUpperCase()}" />
+    <input type="submit" id="${sender[1]}" class="senderbutton" name="sender" value="${sender[0].toUpperCase()}" />
 </form>
 </div>
 </c:forEach>
