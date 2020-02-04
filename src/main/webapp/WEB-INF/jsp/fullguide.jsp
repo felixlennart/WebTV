@@ -10,10 +10,9 @@
 <script src="/js/guidescript.js"></script>
 <%--</head>--%>
 <%--<body>--%>
-<div id="fullguidecontainer">
 <span class="headline">
 <a href="javascript:void(0)" onclick="insertGuide();" style="text-decoration: none; float: left;">&#128472;</a>
-<img src="/media/loading.gif" class="loading hidden"/>
+&nbsp;<img src="/media/loading.gif" class="loading hidden"/>&nbsp;
 <a href="javascript:void(0)" class="closeguide">&#128473;</a>
 </span>
     <br>
@@ -30,14 +29,13 @@
         </tr>
         <c:forEach var="sender" items="${guideData}">
             <tr>
-                <td>
+                <td class="sendercell">
                     <c:out value="${sender[0].toUpperCase()}"></c:out>
                 </td>
-                <td>
+                <td class="programcell">
                     <c:out value="${sender[1]}"></c:out>
                 </td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
-</div>

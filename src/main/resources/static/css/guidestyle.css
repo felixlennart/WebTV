@@ -23,6 +23,6 @@ td {
     text-align: center;
 }
 
-#fullguidecontainer {
-    display: table;
+.sendercell {
+    width: 50%;
 }

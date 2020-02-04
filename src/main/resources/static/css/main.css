@@ -124,11 +124,13 @@ input[type=submit]{
 #fullguide {
     z-index: 11;
     margin: 20px;
-    box-shadow: 20px 20px 20px #000000;
-    position: fixed;
+    box-shadow: 0 0 100px #000000;
+    position: absolute;
     background: #ffffff;
-    left: 10px;
-    right: 10px;
+    left: 5px;
+    right: 5px;
+    top: 5px;
+    word-break: break-word;
 }
 
 
