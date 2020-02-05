@@ -3,7 +3,6 @@ package de.felix.webtv;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import java.io.IOException;
 import java.util.Properties;
 
 public class TVGuide {
@@ -45,7 +44,7 @@ public class TVGuide {
             setUrl(prop.getProperty(getChannel()));
 
             if(cssQuery != null && url != null){
-            Document document = Jsoup.connect(getUrl()).followRedirects(true).timeout(60000).get();
+            Document document = Jsoup.connect(getUrl()).ignoreHttpErrors(true).followRedirects(true).timeout(60000).get();
                 return document.body().select(getCssQuery()).get(0).text();
             }
             else {

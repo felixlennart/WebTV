@@ -1,7 +1,5 @@
 package de.felix.webtv.views;
 
-import de.felix.webtv.RaspberryPiConnector;
-import de.felix.webtv.RemoteHandler;
 import de.felix.webtv.TVGuide;
 import de.felix.webtv.WebtvApplication;
 import org.springframework.stereotype.Controller;
