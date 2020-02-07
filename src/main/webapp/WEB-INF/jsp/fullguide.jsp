@@ -10,12 +10,11 @@
 <script src="/js/guidescript.js"></script>
 <%--</head>--%>
 <%--<body>--%>
-<span class="headline">
+<div class="headline">
 <a href="javascript:void(0)" onclick="insertGuide();" style="text-decoration: none; float: left;">&#128472;</a>
 &nbsp;<img src="/media/loading.gif" class="loading hidden"/>&nbsp;
 <a href="javascript:void(0)" class="closeguide">&#128473;</a>
-</span>
-    <br>
+</div>
     <hr/>
     <table id="guidetable">
         <tbody>

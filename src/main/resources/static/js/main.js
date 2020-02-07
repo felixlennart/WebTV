@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     document.getElementById("openguide").addEventListener("click", function (ev) {
         document.getElementById("fullguide").classList.remove("hidden");
+        document.getElementsByClassName("blackbox")[0].classList.remove("hidden");
         insertGuide();
     });
 
@@ -76,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.addEventListener("click", function (ev) {
         if(ev.target.classList.contains("closeguide")){
             document.getElementById("fullguide").classList.add("hidden");
+            document.getElementsByClassName("blackbox")[0].classList.add("hidden");
         }
     });
 });

@@ -10,8 +10,10 @@
     <script src="/js/main.js"></script>
 </head>
 <body>
+<div class="blackbox hidden"></div>
 <div id="fullguide" class="hidden">
     <a href="javascript:void(0)" class="closeguide">&#128473;</a>
+    <br>
     <div style="width: 90vw; height: 90vh; text-align: center; vertical-align: center">
         <img src="/media/loading.gif"/>
     </div>
