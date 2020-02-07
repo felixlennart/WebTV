@@ -1,15 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<!DOCTYPE html>--%>
-<%--<html lang="en" xmlns:th="http://www.thymeleaf.org">--%>
 
-<%--<head>--%>
-<%--    <meta charset="UTF-8"/>--%>
-<%--    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>--%>
-<%--    <title>WebTV Remote Control</title>--%>
 <link href="/css/guidestyle.css" rel="stylesheet">
 <script src="/js/guidescript.js"></script>
-<%--</head>--%>
-<%--<body>--%>
+
 <div class="headline">
 <a href="javascript:void(0)" onclick="insertGuide();" style="text-decoration: none; float: left;">&#128472;</a>
 &nbsp;<img src="/media/loading.gif" class="loading hidden"/>&nbsp;
