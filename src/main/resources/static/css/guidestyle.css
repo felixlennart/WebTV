@@ -16,7 +16,8 @@ td {
 
 .loading {
     height: 1em;
-    margin: 0 auto;
+    position: relative;
+    top: 0.25em;
 }
 
 .headline {
