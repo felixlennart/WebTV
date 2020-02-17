@@ -1,12 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<link href="/css/guidestyle.css" rel="stylesheet">
-<script src="/js/guidescript.js"></script>
+<link href="${pageContext.request.contextPath}/css/guidestyle.css" rel="stylesheet">
+<script src="${pageContext.request.contextPath}/js/guidescript.js"></script>
 
 <div class="headline">
-    <a href="javascript:void(0)" onclick="insertGuide();" style="text-decoration: none; float: left;">&#128472;</a>
-    &nbsp;<img src="/media/loading.gif" class="loading hidden"/>&nbsp;
-    <a href="javascript:void(0)" class="closeguide">&#128473;</a>
+    <a href="javascript:void(0)" onclick="insertGuide();" style="text-decoration: none; float: left;"><img src="${pageContext.request.contextPath}/media/refresh.svg" class="iconimg"/></a>
+    &nbsp;<img src="${pageContext.request.contextPath}/media/loading.gif" class="loading hidden"/>&nbsp;
+    <a href="javascript:void(0)" class="closeguide"><img src="${pageContext.request.contextPath}/media/close.svg" class="iconimg"/></a>
 </div>
 <hr/>
 <table id="guidetable">

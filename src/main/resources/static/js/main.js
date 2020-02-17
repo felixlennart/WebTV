@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementById("status").classList.add("hidden");})
 
     document.addEventListener("click", function (ev) {
-        if(ev.target.classList.contains("closeguide") || ev.target.classList.contains("blackbox")){
+        if(ev.target.classList.contains("closeguide") || ev.target.parentElement.classList.contains("closeguide") || ev.target.classList.contains("blackbox")){
             document.getElementById("fullguide").classList.add("hidden");
             document.getElementsByClassName("blackbox")[0].classList.add("hidden");
         }

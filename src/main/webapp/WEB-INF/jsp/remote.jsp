@@ -7,21 +7,21 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
     <title>WebTV Remote Control</title>
-    <link href="/css/main.css" rel="stylesheet">
-    <script src="/js/main.js"></script>
+    <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
+    <script src="${pageContext.request.contextPath}/js/main.js"></script>
 </head>
 <body>
 <div class="blackbox hidden"></div>
 <div id="fullguide" class="hidden">
-    <a href="javascript:void(0)" class="closeguide">&#128473;</a>
+    <a href="javascript:void(0)" class="closeguide"><img src="${pageContext.request.contextPath}/media/close.svg" class="iconimg"/></a>
     <br>
     <div style="width: 90vw; height: 90vh; text-align: center; vertical-align: center">
-        <img src="/media/loading.gif"/>
+        <img src="${pageContext.request.contextPath}/media/loading.gif"/>
     </div>
 
 </div>
 <div class="hidden" id="status"><a id="statustext"></a><a id="close" href="javascript:void(0)">X</a></div>
-<h1 class="title">Remote Control <a href="javascript:void(0)" id="openguide">&#128712;</a></h1>
+<h1 class="title">Remote Control <a href="javascript:void(0)" id="openguide"><img src="${pageContext.request.contextPath}/media/guide.svg" class="iconimg" style="padding: unset"/></a></h1>
 <hr>
 <div class="container">
     <c:forEach items="${senderliste}" var="sender">
