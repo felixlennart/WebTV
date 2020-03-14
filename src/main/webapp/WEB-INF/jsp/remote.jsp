@@ -18,10 +18,13 @@
     <div style="width: 90vw; height: 90vh; text-align: center; vertical-align: center">
         <img src="${pageContext.request.contextPath}/media/loading.gif"/>
     </div>
-
 </div>
+<form action="#" id="refreshform" th:action="@{/remote}" th:object="${remoteHandler}" method="post">
+    <input type="hidden" value="refresh" name="url" th:field="*{url}"/>
+    <input type="hidden" name="sender" value="Refresh"/>
+</form>
 <div class="hidden" id="status"><a id="statustext"></a><a id="close" href="javascript:void(0)">X</a></div>
-<h1 class="title">Remote Control <a href="javascript:void(0)" id="openguide"><img src="${pageContext.request.contextPath}/media/guide.svg" class="iconimg" style="padding: unset"/></a></h1>
+<h1 class="title"><a href="javascript:void(0)" id="refresh"><img src="${pageContext.request.contextPath}/media/refresh.svg" class="iconimg" style="padding: unset"/></a> Remote Control <a href="javascript:void(0)" id="openguide"><img src="${pageContext.request.contextPath}/media/guide.svg" class="iconimg" style="padding: unset"/></a></h1>
 <hr>
 <div class="container">
     <c:forEach items="${senderliste}" var="sender">

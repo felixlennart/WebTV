@@ -121,6 +121,12 @@ input[type=submit]{
     text-decoration: none;
 }
 
+#refresh {
+    float: left;
+    clear: left;
+    text-decoration: none;
+}
+
 #fullguide {
     z-index: 12;
     margin: 20px;

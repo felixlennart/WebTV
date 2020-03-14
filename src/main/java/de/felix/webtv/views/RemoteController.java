@@ -43,14 +43,17 @@ public class RemoteController {
     public String remoteSubmit(@ModelAttribute RemoteHandler remoteHandler, ModelMap vars, Model model, @RequestParam("url") String url, @RequestParam("sender") String sender) throws IOException, AWTException, InterruptedException {
         RaspberryPiConnector piConnector = new RaspberryPiConnector();
 //        piConnector.open(remoteHandler.getSenderLink());
-        if(url.equals("killSpring") || url.equals("closePlayer")){
+        if(url.equals("killSpring") || url.equals("closePlayer")) {
             piConnector.init();
             piConnector.kill();
-            if(url.equals("killSpring")){
+            if (url.equals("killSpring")) {
                 piConnector.shutdown();
                 System.exit(0);
             }
             guide = "";
+
+        }else if(url.equals("refresh")) {
+            piConnector.refresh();
         }else {
             piConnector.open(url);
             vars.put("senderliste", liste());
