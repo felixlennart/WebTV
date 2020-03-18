@@ -33,10 +33,16 @@ public class RaspberryPiConnector {
         System.setProperty("java.awt.headless", "false");
         Robot r = new Robot();
         r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-                r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-                r.keyPress(KeyEvent.VK_F5);
-                Thread.sleep(200);
-                r.keyRelease(KeyEvent.VK_F5);
+        r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        r.keyPress(KeyEvent.VK_F5);
+        Thread.sleep(200);
+        r.keyRelease(KeyEvent.VK_F5);
+        Thread.sleep(5000);
+        r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        Thread.sleep(200);
+        r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
 
     public void open(String senderUrl) throws IOException, InterruptedException, AWTException {
