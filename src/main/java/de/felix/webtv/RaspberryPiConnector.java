@@ -53,6 +53,7 @@ public class RaspberryPiConnector {
         System.setProperty("java.awt.headless", "false");
         // Deal with different player types
         if(senderUrl.contains("ustvgo")){
+            Thread.sleep(5000);
             Robot r = new Robot();
             // reload page for vpn extension in chrome
 //                r.mousePress(InputEvent.BUTTON1_DOWN_MASK);

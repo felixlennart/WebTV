@@ -20,7 +20,7 @@
     </div>
 </div>
 <form action="#" id="refreshform" th:action="@{/remote}" th:object="${remoteHandler}" method="post">
-    <input type="hidden" value="refresh" name="url" th:field="*{url}"/>
+<%--    <input type="hidden" value="refresh" name="url" th:field="*{url}"/>--%>
     <input type="hidden" name="sender" value="Refresh"/>
 </form>
 <div class="hidden" id="status"><a id="statustext"></a><a id="close" href="javascript:void(0)">X</a></div>
