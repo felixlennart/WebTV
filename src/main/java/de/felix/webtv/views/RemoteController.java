@@ -50,6 +50,7 @@ public class RemoteController {
                 piConnector.shutdown();
                 System.exit(0);
             }
+            piConnector.openOnly("http://localhost:8080/welcome");
             guide = "";
 
         }else if(url.equals("refresh")) {

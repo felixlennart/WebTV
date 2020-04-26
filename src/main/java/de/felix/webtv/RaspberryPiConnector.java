@@ -53,15 +53,14 @@ public class RaspberryPiConnector {
         System.setProperty("java.awt.headless", "false");
         // Deal with different player types
         if(senderUrl.contains("ustvgo")){
-            Thread.sleep(5000);
             Robot r = new Robot();
             // reload page for vpn extension in chrome
-//                r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-//                r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-//                r.keyPress(KeyEvent.VK_F5);
-//                Thread.sleep(200);
-//                r.keyRelease(KeyEvent.VK_F5);
-//                Thread.sleep(5000);
+                r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+                r.keyPress(KeyEvent.VK_F5);
+                Thread.sleep(100);
+                r.keyRelease(KeyEvent.VK_F5);
+                Thread.sleep(5000);
             r.mouseMove(80, 80);
             r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
             r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
@@ -74,5 +73,10 @@ public class RaspberryPiConnector {
             r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
             r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         }
+    }
+
+    public void openOnly(String url) throws IOException {
+        init();
+        Runtime.getRuntime().exec(openString + " " + url);
     }
 }
