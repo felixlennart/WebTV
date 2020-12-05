@@ -44,6 +44,12 @@
     </div>
     <div class="item">
         <form action="#" th:action="@{/remote}" th:object="${remoteHandler}" method="post">
+            <input type="hidden" value="closeApp" name="url" th:field="*{url}"/>
+            <input type="submit" name="sender" value="Close application" style="margin-top: 30px;"/>
+        </form>
+    </div>
+    <div class="item">
+        <form action="#" th:action="@{/remote}" th:object="${remoteHandler}" method="post">
             <input type="hidden" value="killSpring" name="url" th:field="*{url}"/>
             <input type="submit" name="sender" id="killerbutton" value="Shutdown"/>
         </form>

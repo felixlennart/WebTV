@@ -29,6 +29,10 @@ public class RaspberryPiConnector {
         Runtime.getRuntime().exec(this.shutdownString);
     }
 
+    public void close() {
+        System.exit(0);
+    }
+
     public void refresh() throws AWTException, InterruptedException {
         System.setProperty("java.awt.headless", "false");
         Robot r = new Robot();
@@ -54,17 +58,14 @@ public class RaspberryPiConnector {
         // Deal with different player types
         if(senderUrl.contains("ustvgo")){
             Robot r = new Robot();
-            // reload page for vpn extension in chrome
-                r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-                r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-                r.keyPress(KeyEvent.VK_F5);
-                Thread.sleep(100);
-                r.keyRelease(KeyEvent.VK_F5);
-                Thread.sleep(5000);
-            r.mouseMove(80, 80);
+            Thread.sleep(6500);
+            r.mouseMove(550, 550);
             r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
             r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
             Thread.sleep(200);
+            r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+            Thread.sleep(500);
             r.mousePress(InputEvent.BUTTON1_DOWN_MASK);
             r.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         }else {

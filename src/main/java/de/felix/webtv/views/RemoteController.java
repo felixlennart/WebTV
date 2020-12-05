@@ -43,12 +43,12 @@ public class RemoteController {
     public String remoteSubmit(@ModelAttribute RemoteHandler remoteHandler, ModelMap vars, Model model, @RequestParam("url") String url, @RequestParam("sender") String sender) throws IOException, AWTException, InterruptedException {
         RaspberryPiConnector piConnector = new RaspberryPiConnector();
 //        piConnector.open(remoteHandler.getSenderLink());
-        if(url.equals("killSpring") || url.equals("closePlayer")) {
+        if(url.equals("killSpring") || url.equals("closePlayer") || url.equals("closeApp")) {
             piConnector.init();
             piConnector.kill();
-            if (url.equals("killSpring")) {
-                piConnector.shutdown();
-                System.exit(0);
+            if (url.equals("killSpring") || url.equals("closeApp")) {
+                if(url.equals("killSpring")) piConnector.shutdown();
+                piConnector.close();
             }
             piConnector.openOnly("http://localhost:8080/welcome");
             guide = "";
